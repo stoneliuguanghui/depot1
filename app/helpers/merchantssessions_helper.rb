@@ -1,0 +1,2 @@
+module MerchantssessionsHelper
+end

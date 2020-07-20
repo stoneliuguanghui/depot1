@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  merchant_name: MyString
+  merchant_email: MyString
+  merchant_address: MyString
+  longitude: 9.99
+  latitude: 9.99
+
+two:
+  merchant_name: MyString
+  merchant_email: MyString
+  merchant_address: MyString
+  longitude: 9.99
+  latitude: 9.99

@@ -1,0 +1,24 @@
+<%= form_for @merchant do |f| %>
+  <% if @merchant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@merchant.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @merchant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <%= f.label :merchant_name %>
+      <%= f.text_field :merchant_name%>
+      <%= f.label :merchant_email%>
+      <%= f.text_field :merchant_email%>
+      <%= f.label :password%>
+      <%= f.password_field :password%>
+      <%= f.label :password_confirmation,"Confirmation"%>
+      <%= f.password_field :password_confirmation%>
+      <%= f.submit "提交",class: "btn btn-large btn-primary"%>
+
+<% end %>
