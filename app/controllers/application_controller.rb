@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
 
 	def current_user
 		User.find(session[:user_id])
+	rescue ActiveRecord::RecordNotFound
+		user=User.create
+		session[:user_id]=user.id
+		user
 	end
 
 	protected

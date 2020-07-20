@@ -4,9 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
+    
   	user=User.find_by(name: session_params[:name])
   	if user&&User.authenticate(session_params[:name],session_params[:password])
   		session[:user_id]=user.id
+      user.session_id = user.id
   		redirect_to admin_url
   	else
   		flash.now[:error] = 'Invalid email/password combination'
@@ -18,7 +20,7 @@ class SessionsController < ApplicationController
   	session[:user_id]=nil
   	redirect_to store_url,:notice=>"Logged out"
   end
-  
+
   def session_params
   	params.require(:session)
   end
