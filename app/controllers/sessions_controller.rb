@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   	if user&&User.authenticate(session_params[:name],session_params[:password])
   		session[:user_id]=user.id
       user.session_id = user.id
-  		redirect_to admin_url
+  		redirect_to store_url
   	else
   		flash.now[:error] = 'Invalid email/password combination'
 			render "new"
